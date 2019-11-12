@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">El barco ochentero</string>
+    <string name="user">Usuario</string>
+    <string name="password">Constraseña</string>
+    <string name="login">Login</string>
+    <string name="register">Registrarse</string>
+    <string name="accessFailed">Usuario o contraseña incorrectos</string>
+    <string name="registerTitle">Registro</string>
+    <string name="passwordAgain">Repita la contraseña</string>
+    <string name="unfilled">Debe rellenar todos los campos</string>
+    <string name="differentPass">Las contraseñas deben ser iguales</string>
+
 </resources>

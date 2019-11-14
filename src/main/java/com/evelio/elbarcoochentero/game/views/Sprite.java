@@ -1,10 +1,16 @@
 package com.evelio.elbarcoochentero.game.views;
 
+import android.content.res.Resources;
 import android.graphics.Canvas;
 
-public interface Sprite {
+public abstract class Sprite {
 
-    public void draw(Canvas canvas);
-    public void update();
+    public abstract void draw(Canvas canvas);
+    public abstract void update();
+    public abstract int getRightX();
+    public abstract int getTopY();
+    public abstract int getLeftX();
+    public abstract int getBotY();
+
 
 }

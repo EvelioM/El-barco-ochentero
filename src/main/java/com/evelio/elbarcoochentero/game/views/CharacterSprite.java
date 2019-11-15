@@ -20,12 +20,19 @@ public class CharacterSprite extends Sprite{
 
 
     public CharacterSprite() {
-        image = BitmapFactory.decodeResource(Constants.CURRENT_CONTEXT
-                .getResources(), R.drawable.ic_launcher_foreground_boat);
+        Bitmap preimage = BitmapFactory.decodeResource(Constants.CURRENT_CONTEXT
+                .getResources(), R.drawable.character);
+
+        float aspectRatio = preimage.getWidth() /
+                (float) preimage.getHeight();
+        width = 200;
+        height = Math.round(width / aspectRatio);
+
+        image = Bitmap.createScaledBitmap(
+                preimage, width, height, false);
         x = Constants.SCREEN_WIDTH / 2;
-        y = (int)(Constants.SCREEN_HEIGHT * 0.8);
+        y = (int)(Constants.SCREEN_HEIGHT * 0.7);
         height = image.getHeight();
-        width = image.getWidth();
         orientationData = new OrientationData();
         orientationData.register();
         orientationData.newGame();
@@ -76,7 +83,7 @@ public class CharacterSprite extends Sprite{
 
     public boolean collided(Sprite s) {
         int realX = x + (width/2);
-        int realY = y + (height/2);
+        int realY = y;
 
         if(s.getBotY() > realY && s.getTopY() < realY && s.getLeftX() < realX && s.getRightX() > realX ){
             return true;

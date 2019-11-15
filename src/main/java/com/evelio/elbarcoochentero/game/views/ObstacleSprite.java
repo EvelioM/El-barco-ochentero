@@ -7,26 +7,34 @@ import com.evelio.elbarcoochentero.game.util.Constants;
 
 public class ObstacleSprite extends Sprite {
 
+    private final int yVelocity;
     private Bitmap image;
     private int x;
     private int y = 0;
     private int height;
     private int width;
 
-    public ObstacleSprite(Bitmap bmp) {
-        image = bmp;
-        x = Constants.SCREEN_WIDTH / 2;
-        y = (int)(Constants.SCREEN_HEIGHT * 0.8);
+    public ObstacleSprite(int x) {
+
+        image = Constants.OBSTACLE_SPRITE;
+
+        width = image.getWidth();
+        height = image.getHeight();
+
+        yVelocity = 4;
+
+        this.x = x;
+        y = -height;
     }
 
     @Override
     public void draw(Canvas canvas) {
-
+        canvas.drawBitmap(image, x, y, null);
     }
 
     @Override
     public void update() {
-
+        y += yVelocity;
     }
 
     @Override

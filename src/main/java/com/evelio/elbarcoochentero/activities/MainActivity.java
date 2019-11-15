@@ -41,7 +41,8 @@ public class MainActivity extends AppCompatActivity {
                     cursor.close();
                     db.close();
                     finish();
-                    goGame();
+                    goLogged();
+                    //goGame();
                 }
 
                 else{
@@ -60,6 +61,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void goGame(){
         Intent intent = new Intent(this, GameActivity.class);
+        startActivity(intent);
+    }
+    public void goLogged(){
+        Intent intent = new Intent(this, MainLogged.class);
         startActivity(intent);
     }
 }

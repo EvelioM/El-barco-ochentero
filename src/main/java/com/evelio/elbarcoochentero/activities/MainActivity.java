@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
                     cursor.close();
                     db.close();
                     finish();
+                    goGame();
                 }
 
                 else{
@@ -54,6 +55,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void goRegister(){
         Intent intent = new Intent(this, RegisterActivity.class);
+        startActivity(intent);
+    } //TODO This should return the user so yoy can close this activity
+
+    public void goGame(){
+        Intent intent = new Intent(this, GameActivity.class);
         startActivity(intent);
     }
 }

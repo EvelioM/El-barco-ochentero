@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="Primera Categoría" >
+        <EditTextPreference
+            android:dialogTitle="Introduzca su Nombre"
+            android:key="Nombre"
+            android:title="Nombre" />
+        <EditTextPreference
+            android:dialogTitle="Introduzca su Alias"
+            android:key="Alias"
+            android:title="Alias" />
+
+        <CheckBoxPreference
+            android:key="Music"
+            android:summary="Encender o apagar musica"
+            android:title="Musica" />
+        <CheckBoxPreference
+            android:key="Sonidos"
+            android:summary="Encender o apagar efectos"
+            android:title="Sonidos" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Segunda Categoría" >
+        <ListPreference
+            android:dialogTitle="Indicar Nivel"
+            android:entries="@array/nivel"
+            android:entryValues="@array/codigonivel"
+            android:key="Nivel"
+            android:summary="Indicar el nivel de dificultad deseado"
+            android:title="Lista de Niveles" />
+
+        <MultiSelectListPreference
+            android:dialogTitle="Niveles a jugar"
+            android:entries="@array/niveles"
+            android:entryValues="@array/codigoniveles"
+            android:key="Niveles"
+            android:summary="Elija en qué niveles desea jugar"
+            android:title="Niveles jugables" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Tercera Categoría" >
+        <CheckBoxPreference
+            android:key="Vibracion"
+            android:summary="Encender o apagar Vibración"
+            android:title="Vibración" />
+        <CheckBoxPreference
+            android:key="Giroscopio"
+            android:summary="Giroscopio si o Giroscopio no"
+            android:title="Giroscopio" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

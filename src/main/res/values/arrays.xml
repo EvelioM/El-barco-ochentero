@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="nivel">
+        <item>Para niños</item>
+        <item>Fácil</item>
+        <item>Normal</item>
+        <item>Difícil</item>
+        <item>Imposible</item>
+    </string-array>
+    <string-array name="codigonivel">
+        <item>01</item>
+        <item>02</item>
+        <item>03</item>
+        <item>04</item>
+        <item>05</item>
+    </string-array>
+    <string-array name="niveles">
+        <item>Mundo 1</item>
+        <item>Mundo 2</item>
+        <item>Mundo 3</item>
+        <item>Mundo 4</item>
+        <item>Mundo 5</item>
+    </string-array>
+    <string-array name="codigoniveles">
+        <item>01</item>
+        <item>02</item>
+        <item>03</item>
+        <item>04</item>
+        <item>05</item>
+    </string-array>
+</resources>

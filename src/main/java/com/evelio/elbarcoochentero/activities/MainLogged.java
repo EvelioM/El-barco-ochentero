@@ -1,6 +1,7 @@
 package com.evelio.elbarcoochentero.activities;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -31,14 +32,14 @@ public class MainLogged extends AppCompatActivity implements NavigationView.OnNa
 
         drawer = findViewById(R.id.drawer_layout);
 
-        NavigationView navigationView=findViewById(R.id.navigation);
+        NavigationView navigationView = findViewById(R.id.navigation);
         navigationView.setNavigationItemSelectedListener(this);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        if (savedInstanceState==null) {
+        if (savedInstanceState == null) {
 
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FirstFragment()).commit();
             navigationView.setCheckedItem(R.id.nav_message);
@@ -48,7 +49,7 @@ public class MainLogged extends AppCompatActivity implements NavigationView.OnNa
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.nav_message:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FirstFragment()).commit();
                 break;
@@ -58,11 +59,15 @@ public class MainLogged extends AppCompatActivity implements NavigationView.OnNa
             case R.id.nav_profile:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ThirdFragment()).commit();
                 break;
+            case R.id.nav_settings:
+                Intent intencionxml = new Intent(MainLogged.this, SettingsContainer.class);
+                MainLogged.this.startActivity(intencionxml);
+                break;
             case R.id.nav_share:
-                Toast.makeText(this, "Compartir", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Compartido", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.nav_send:
-                Toast.makeText(this, "Enviar", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Enviado", Toast.LENGTH_SHORT).show();
                 break;
         }
         drawer.closeDrawer(GravityCompat.START);

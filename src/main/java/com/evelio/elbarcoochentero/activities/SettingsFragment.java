@@ -1,19 +1,23 @@
 package com.evelio.elbarcoochentero.activities;
 
 import android.os.Bundle;
+
 import com.evelio.elbarcoochentero.R;
+
 import android.content.Context;
 
-import 	androidx.preference.PreferenceFragmentCompat;
+import androidx.preference.PreferenceFragmentCompat;
 
 
-public class SettingsFragment extends PreferenceFragmentCompat  {
+public class SettingsFragment extends PreferenceFragmentCompat {
     private OnFragmentInteractionListener mListener;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         // Load the preferences from an XML resource
         setPreferencesFromResource(R.xml.settings, rootKey);
+
+
     }
 
     @Override
@@ -33,5 +37,6 @@ public class SettingsFragment extends PreferenceFragmentCompat  {
         mListener = null;
     }
 
-    public interface OnFragmentInteractionListener {}
+    public interface OnFragmentInteractionListener {
+    }
 }

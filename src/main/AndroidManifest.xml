@@ -23,7 +23,7 @@
         <activity android:name=".activities.MainLogged" android:theme="@style/AppTheme.NoActionBar">
 
         </activity>
-        <activity android:name=".activities.SettingsContainer" android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".activities.SettingsContainer">
 
         </activity>
     </application>

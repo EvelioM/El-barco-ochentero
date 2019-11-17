@@ -1,6 +1,9 @@
 package com.evelio.elbarcoochentero.activities;
 
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -16,6 +19,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.NotificationCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -132,11 +136,25 @@ public class MainLogged extends AppCompatActivity implements NavigationView.OnNa
             String resultado = data.getExtras().getString("resultado" );
             if (resultado.equals("WIN")) {
                 nick.setText(nickStr + " el ganador");
+                Notification notification = new NotificationCompat.Builder(this)
+                        .setSmallIcon(R.drawable.ic_win)
+                        .setContentTitle("Has ganado")
+                        .setContentText("Eres el mejor")
+                        .build();
+                NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+                manager.notify(0, notification);
                 if (!drawer.isDrawerOpen(GravityCompat.START)) {
                     drawer.openDrawer(GravityCompat.START);
                 }
             }else if(resultado.equals("LOSE")){
                 nick.setText(nickStr + " el perdedor");
+                Notification notification = new NotificationCompat.Builder(this)
+                        .setSmallIcon(R.drawable.ic_close_black_24dp)
+                        .setContentTitle("Has perdido")
+                        .setContentText("Eres un parguelas")
+                        .build();
+                NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+                manager.notify(0, notification);
                 if (!drawer.isDrawerOpen(GravityCompat.START)) {
                     drawer.openDrawer(GravityCompat.START);
                 }

@@ -12,5 +12,18 @@
 
     <string name="navigation_drawer_open">Abrir navigation drawer</string>
     <string name="navigation_drawer_close">Cerrar navigation drawer</string>
+    <string name="restaurar">Restaurar Preferencias</string>
+    <string name="respaldar">Respaldar Preferencias</string>
+    <string name="info1">El barco ochentero es la experiencia musical y turística más exclusiva,
 
+original y divertida que puedas vivir. Más de 3 horas diarias de conciertos en directo, 5 horas cada noche de sesiones y fiestas con los mejores Djs. pinchando la mejor música de los 80s y 3 espectaculares “POOL PARTIES”</string>
+    <string name="info2">Precios por persona en base a la categoría elegida  y ocupación todos adultos.
+Tasas portuarias 200€ por pasajero
+Tasa de servicio a abonar directamente en el barco 72€ por pasajero.
+Triples y cuádruples con niños menores de 17 años) 2 adultos abonan tarifa de doble en categoría que corresponda y cada niño 250 + tasas.
+Menores siempre acompañados por 2 adultos.
+Acceso a todas las instalaciones, actividades y programas de animación del crucero.
+2º Turno de cenas.
+Regimen de PENSION COMPLETA con muchas citas a lo largo del día: café en cubierta para los más madrugadores, desayuno, almuerzo, té de la tarde, pizza y snack, cena y sorpresas gastronómicas de medianoche. (No inlcuye bebidas)
+Acceso y participación en  todas las sesiones, fiestas, actividades y conciertos privados organizados en exclusiva para los pasajeros de EL BARCO OCHENTERO 2019 (El resto del pasaje no tiene acceso)</string>
 </resources>

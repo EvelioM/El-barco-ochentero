@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <PreferenceCategory android:title="Primera Categoría" >
+    <PreferenceCategory android:title="Primera Categoría">
         <EditTextPreference
             android:dialogTitle="Introduzca su Nombre"
             android:key="Nombre"
@@ -20,7 +20,7 @@
             android:summary="Encender o apagar efectos"
             android:title="Sonidos" />
     </PreferenceCategory>
-    <PreferenceCategory android:title="Segunda Categoría" >
+    <PreferenceCategory android:title="Segunda Categoría">
         <ListPreference
             android:dialogTitle="Indicar Nivel"
             android:entries="@array/nivel"
@@ -37,7 +37,7 @@
             android:summary="Elija en qué niveles desea jugar"
             android:title="Niveles jugables" />
     </PreferenceCategory>
-    <PreferenceCategory android:title="Tercera Categoría" >
+    <PreferenceCategory android:title="Tercera Categoría">
         <CheckBoxPreference
             android:key="Vibracion"
             android:summary="Encender o apagar Vibración"
@@ -47,5 +47,6 @@
             android:summary="Giroscopio si o Giroscopio no"
             android:title="Giroscopio" />
     </PreferenceCategory>
+
 
 </PreferenceScreen>

@@ -29,6 +29,7 @@ public class MainLogged extends AppCompatActivity implements NavigationView.OnNa
     private TextView email;
     private String nickStr;
     private View cont;
+    private View.OnTouchListener onTouch;
 
 
     @Override
@@ -51,7 +52,8 @@ public class MainLogged extends AppCompatActivity implements NavigationView.OnNa
         email.setText(nickStr + "@barco.com");
 
         cont = findViewById(R.id.fragment_container);
-        cont.setOnTouchListener(new View.OnTouchListener() {
+
+        this.onTouch = new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_MOVE) {
@@ -62,9 +64,11 @@ public class MainLogged extends AppCompatActivity implements NavigationView.OnNa
                         }
                     }
                 }
+
                 return true;
             }
-        });
+        };
+        cont.setOnTouchListener(onTouch);
 
         navigationView.setNavigationItemSelectedListener(this);
 
@@ -74,7 +78,7 @@ public class MainLogged extends AppCompatActivity implements NavigationView.OnNa
 
         if (savedInstanceState == null) {
 
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FirstFragment()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FirstFragment(onTouch)).commit();
             navigationView.setCheckedItem(R.id.nav_message);
         }
 
@@ -84,11 +88,10 @@ public class MainLogged extends AppCompatActivity implements NavigationView.OnNa
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.nav_message:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FirstFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FirstFragment(onTouch)).commit();
                 break;
             case R.id.nav_chat:
-                Intent intent = new Intent(this, SecondFragment.class);
-                startActivityForResult(intent, 5555);
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new SecondFragment(onTouch)).commit();
                 break;
             case R.id.nav_profile:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ThirdFragment()).commit();

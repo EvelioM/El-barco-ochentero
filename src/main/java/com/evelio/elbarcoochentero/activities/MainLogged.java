@@ -87,7 +87,8 @@ public class MainLogged extends AppCompatActivity implements NavigationView.OnNa
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FirstFragment()).commit();
                 break;
             case R.id.nav_chat:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new SecondFragment()).commit();
+                Intent intent = new Intent(this, SecondFragment.class);
+                startActivityForResult(intent, 5555);
                 break;
             case R.id.nav_profile:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ThirdFragment()).commit();
@@ -97,8 +98,8 @@ public class MainLogged extends AppCompatActivity implements NavigationView.OnNa
                 MainLogged.this.startActivity(intencionxml);
                 break;
             case R.id.nav_game:
-                Intent intent = new Intent(this, GameActivity.class);
-                startActivityForResult(intent, 5555);
+                Intent intent2 = new Intent(this, GameActivity.class);
+                startActivityForResult(intent2, 5555);
                 break;
             case R.id.nav_picture:
                 Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);

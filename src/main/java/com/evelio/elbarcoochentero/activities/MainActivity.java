@@ -16,6 +16,7 @@ import com.evelio.elbarcoochentero.listeners.OnLoginListener;
 public class MainActivity extends AppCompatActivity {
 
     private ControlLogin controlLog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,8 +42,7 @@ public class MainActivity extends AppCompatActivity {
                     cursor.close();
                     db.close();
                     finish();
-                    goLogged();
-                    //goGame();
+                    goLogged(usr);
                 }
 
                 else{
@@ -59,12 +59,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     } //TODO This should return the user so yoy can close this activity
 
-    public void goGame(){
-        Intent intent = new Intent(this, GameActivity.class);
-        startActivity(intent);
-    }
-    public void goLogged(){
+    public void goLogged(String nick){
         Intent intent = new Intent(this, MainLogged.class);
+        intent.putExtra("nick",nick);
         startActivity(intent);
     }
 }

@@ -1,10 +1,9 @@
 package com.evelio.elbarcoochentero.activities;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import com.evelio.elbarcoochentero.R;
-
-import android.content.Context;
 
 import androidx.preference.PreferenceFragmentCompat;
 

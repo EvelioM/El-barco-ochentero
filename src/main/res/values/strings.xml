@@ -9,7 +9,8 @@
     <string name="passwordAgain">Repita la contraseña</string>
     <string name="unfilled">Debe rellenar todos los campos</string>
     <string name="differentPass">Las contraseñas deben ser iguales</string>
-
+    <string name="send">Enviar</string>
+    <string name="share">Compartir</string>
     <string name="navigation_drawer_open">Abrir navigation drawer</string>
     <string name="navigation_drawer_close">Cerrar navigation drawer</string>
     <string name="restaurar">Restaurar Preferencias</string>

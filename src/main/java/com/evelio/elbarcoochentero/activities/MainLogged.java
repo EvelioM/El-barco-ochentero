@@ -3,8 +3,14 @@ package com.evelio.elbarcoochentero.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.MenuItem;
-import android.widget.Toast;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.TextView;
+
+import com.evelio.elbarcoochentero.R;
+import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -13,13 +19,16 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.evelio.elbarcoochentero.R;
-import com.google.android.material.navigation.NavigationView;
 
+public class MainLogged extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
-public class MainLogged extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private DrawerLayout drawer;
+    static final int REQUEST_IMAGE_CAPTURE = 1;
+    private TextView nick;
+    private TextView email;
+    private String nickStr;
+    private View cont;
 
 
     @Override
@@ -31,8 +40,32 @@ public class MainLogged extends AppCompatActivity implements NavigationView.OnNa
         setSupportActionBar(toolbar);
 
         drawer = findViewById(R.id.drawer_layout);
-
         NavigationView navigationView = findViewById(R.id.navigation);
+        View hView =  navigationView.getHeaderView(0);
+        nick = hView.findViewById(R.id.nick);
+        email = hView.findViewById(R.id.email);
+
+        Intent intent = getIntent();
+        nickStr = intent.getStringExtra("nick");
+        nick.setText(nickStr);
+        email.setText(nickStr+"@barco.com");
+
+        cont = findViewById(R.id.fragment_container);
+        cont.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if(event.getAction() == MotionEvent.ACTION_MOVE){
+                    int historySize = event.getHistorySize();
+                    if(historySize>0 && event.getHistoricalX(historySize-1) > event.getHistoricalX(0)) {
+                        if (!drawer.isDrawerOpen(GravityCompat.START)) {
+                            drawer.openDrawer(GravityCompat.START);
+                        }
+                    }
+                }
+                return true;
+            }
+        });
+
         navigationView.setNavigationItemSelectedListener(this);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -63,11 +96,15 @@ public class MainLogged extends AppCompatActivity implements NavigationView.OnNa
                 Intent intencionxml = new Intent(MainLogged.this, SettingsContainer.class);
                 MainLogged.this.startActivity(intencionxml);
                 break;
-            case R.id.nav_share:
-                Toast.makeText(this, "Compartido", Toast.LENGTH_SHORT).show();
+            case R.id.nav_game:
+                Intent intent = new Intent(this, GameActivity.class);
+                startActivityForResult(intent, 5555);
                 break;
-            case R.id.nav_send:
-                Toast.makeText(this, "Enviado", Toast.LENGTH_SHORT).show();
+            case R.id.nav_picture:
+                Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+                    startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+                }
                 break;
         }
         drawer.closeDrawer(GravityCompat.START);
@@ -82,5 +119,26 @@ public class MainLogged extends AppCompatActivity implements NavigationView.OnNa
             super.onBackPressed();
         }
     }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 5555 && resultCode == RESULT_OK) {
+            String resultado = data.getExtras().getString("resultado" );
+            if (resultado.equals("WIN")) {
+                nick.setText(nickStr + " el ganador");
+                if (!drawer.isDrawerOpen(GravityCompat.START)) {
+                    drawer.openDrawer(GravityCompat.START);
+                }
+            }else if(resultado.equals("LOSE")){
+                nick.setText(nickStr + " el perdedor");
+                if (!drawer.isDrawerOpen(GravityCompat.START)) {
+                    drawer.openDrawer(GravityCompat.START);
+                }
+            }
+        }
+    }
+
 }
 

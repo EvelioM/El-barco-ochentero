@@ -29,4 +29,16 @@ Regimen de PENSION COMPLETA con muchas citas a lo largo del día: café en cubie
 Acceso y participación en  todas las sesiones, fiestas, actividades y conciertos privados organizados en exclusiva para los pasajeros de EL BARCO OCHENTERO 2019 (El resto del pasaje no tiene acceso)</string>
     <string name="btnplay">Play</string>
 
+
+    <string name="title">Una experiencia unica</string>
+    <string name="info">Informacion</string>
+    <string name="videos">Videos</string>
+    <string name="profile">Perfil</string>
+    <string name="settings">Preferencias</string>
+    <string name="game">Juego Ochentero</string>
+    <string name="photo">Foto Ochentera</string>
+    <string name="eighties">Cosas Ochenterasa</string>
+
+
+    Informacion
 </resources>

@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ControlLogin controlLog;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,20 +33,18 @@ public class MainActivity extends AppCompatActivity {
                 goRegister();
             }
         });
-        controlLog.setOnLoginListener(new OnLoginListener(){
+        controlLog.setOnLoginListener(new OnLoginListener() {
             @Override
-            public void onLogin(String usr, String password){
+            public void onLogin(String usr, String password) {
                 String Query = "Select * from Users where nick = \'" + usr + "\' and password = \'" + password + "\';";
                 Cursor cursor = db.rawQuery(Query, null);
 
-                if (cursor.getCount() == 1){
+                if (cursor.getCount() == 1) {
                     cursor.close();
                     db.close();
                     finish();
                     goLogged(usr);
-                }
-
-                else{
+                } else {
                     controlLog.setMessage(getResources().getString(R.string.accessFailed));
                     cursor.close();
                 }
@@ -54,14 +53,14 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void goRegister(){
+    public void goRegister() {
         Intent intent = new Intent(this, RegisterActivity.class);
         startActivity(intent);
     } //TODO This should return the user so yoy can close this activity
 
-    public void goLogged(String nick){
+    public void goLogged(String nick) {
         Intent intent = new Intent(this, MainLogged.class);
-        intent.putExtra("nick",nick);
+        intent.putExtra("nick", nick);
         startActivity(intent);
     }
 }

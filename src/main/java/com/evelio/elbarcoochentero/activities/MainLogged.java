@@ -20,7 +20,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 
-public class MainLogged extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class MainLogged extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
 
     private DrawerLayout drawer;
@@ -41,22 +41,22 @@ public class MainLogged extends AppCompatActivity implements NavigationView.OnNa
 
         drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.navigation);
-        View hView =  navigationView.getHeaderView(0);
+        View hView = navigationView.getHeaderView(0);
         nick = hView.findViewById(R.id.nick);
         email = hView.findViewById(R.id.email);
 
         Intent intent = getIntent();
         nickStr = intent.getStringExtra("nick");
         nick.setText(nickStr);
-        email.setText(nickStr+"@barco.com");
+        email.setText(nickStr + "@barco.com");
 
         cont = findViewById(R.id.fragment_container);
         cont.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                if(event.getAction() == MotionEvent.ACTION_MOVE){
+                if (event.getAction() == MotionEvent.ACTION_MOVE) {
                     int historySize = event.getHistorySize();
-                    if(historySize>0 && event.getHistoricalX(historySize-1) > event.getHistoricalX(0)) {
+                    if (historySize > 0 && event.getHistoricalX(historySize - 1) > event.getHistoricalX(0)) {
                         if (!drawer.isDrawerOpen(GravityCompat.START)) {
                             drawer.openDrawer(GravityCompat.START);
                         }
@@ -126,13 +126,13 @@ public class MainLogged extends AppCompatActivity implements NavigationView.OnNa
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 5555 && resultCode == RESULT_OK) {
-            String resultado = data.getExtras().getString("resultado" );
+            String resultado = data.getExtras().getString("resultado");
             if (resultado.equals("WIN")) {
                 nick.setText(nickStr + " el ganador");
                 if (!drawer.isDrawerOpen(GravityCompat.START)) {
                     drawer.openDrawer(GravityCompat.START);
                 }
-            }else if(resultado.equals("LOSE")){
+            } else if (resultado.equals("LOSE")) {
                 nick.setText(nickStr + " el perdedor");
                 if (!drawer.isDrawerOpen(GravityCompat.START)) {
                     drawer.openDrawer(GravityCompat.START);

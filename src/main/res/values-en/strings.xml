@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">The Eighties ship</string>
+    <string name="user">User</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="accessFailed">Incorrect User or password</string>
+    <string name="registerTitle">Register</string>
+    <string name="passwordAgain">Repeat the password</string>
+    <string name="unfilled">You must fill all the fields</string>
+    <string name="differentPass">Passwords must be the same</string>
+    <string name="send">Send</string>
+    <string name="share">Share</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="restaurar">Restore Settings</string>
+    <string name="respaldar">Backup Settings</string>
+    <string name="info1">
+The eighties ship is the most exclusive musical and tourist experience,
+
+Original and fun you can live. More than 3 hours a day of live concerts, 5 hours each night of sessions and parties with the best DJs. playing the best music of the 80s and 3 spectacular “POOL PARTIES”</string>
+    <string name="info2">Prices per person based on the chosen category and occupation all adults.
+Port fees € 200 per passenger
+Service fee to be paid directly on the boat € 72 per passenger.
+Triple and quadruple with children under 17) 2 adults pay double fare in corresponding category and each child 250 + fees.
+Children always accompanied by 2 adults.
+Access to all facilities, activities and entertainment programs of the cruise.
+2nd dinner shift.
+COMPLETE PENSION regimen with many appointments throughout the day: coffee on deck for the early risers, breakfast, lunch, afternoon tea, pizza and snack, dinner and midnight gastronomic surprises. (Does not include drinks)
+Access and participation in all sessions, parties, activities and private concerts organized exclusively for passengers of EL BARCO OCHENTERO 2019 (The rest of the passage has no access)</string>
+    <string name="btnplay">Play</string>
+
+
+
+
+    <string name="title">A unique experience</string>
+    <string name="info">Information</string>
+    <string name="videos">Videos</string>
+    <string name="profile">Profile</string>
+    <string name="settings">Settings</string>
+    <string name="game">Eighties Game</string>
+    <string name="photo">Eighties Picture</string>
+    <string name="eighties">Eighties stuff</string>
+</resources>

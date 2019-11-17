@@ -3,48 +3,48 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:fillViewport="false">
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
 
-    <TextView
-        android:id="@+id/text_view_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Una experiencia única"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="98dp"
-        style="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
+        <TextView
+            android:id="@+id/text_view_title"
+            style="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="98dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/title" />
 
-    <TextView
-        android:id="@+id/text_view_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:text="@string/info1" />
+        <TextView
+            android:id="@+id/text_view_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginRight="16dp"
+            android:text="@string/info1" />
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/image_view_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/barco_image">
-    </androidx.appcompat.widget.AppCompatImageView>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image_view_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="200dp"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/barco_image"></androidx.appcompat.widget.AppCompatImageView>
 
-    <TextView
-        android:id="@+id/text_view_abajo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="450dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="50dp"
-        android:text="@string/info2" />
-</RelativeLayout>
+        <TextView
+            android:id="@+id/text_view_abajo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="450dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="50dp"
+            android:text="@string/info2" />
+    </RelativeLayout>
 </ScrollView>

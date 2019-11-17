@@ -7,31 +7,31 @@
         <item
             android:id="@+id/nav_message"
             android:icon="@drawable/ic_info_black_24dp"
-            android:title="Informacion"></item>
+            android:title="@string/info"></item>
         <item
             android:id="@+id/nav_chat"
             android:icon="@drawable/ic_video_library_black_24dp"
-            android:title="Videos"></item>
+            android:title="@string/videos"></item>
         <item
             android:id="@+id/nav_profile"
             android:icon="@drawable/ic_person"
-            android:title="Perfil"></item>
+            android:title="@string/profile"></item>
         <item
             android:id="@+id/nav_settings"
             android:icon="@drawable/ic_settings_black_24dp"
-            android:title="Preferencias"></item>
+            android:title="@string/settings"></item>
 
     </group>
-    <item android:title="Cosas ochenteras">
+    <item android:title="@string/eighties">
         <menu>
             <item
                 android:id="@+id/nav_game"
                 android:icon="@drawable/ic_directions_boat_black_24dp"
-                android:title="Juego ochentero"></item>
+                android:title="@string/game"></item>
             <item
                 android:id="@+id/nav_picture"
                 android:icon="@drawable/ic_camera_alt_black_24dp"
-                android:title="Echar foto ochentera"></item>
+                android:title="@string/photo"></item>
         </menu>
     </item>
 

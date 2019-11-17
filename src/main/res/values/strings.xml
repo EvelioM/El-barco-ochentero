@@ -39,6 +39,11 @@ Acceso y participación en  todas las sesiones, fiestas, actividades y concierto
     <string name="photo">Foto Ochentera</string>
     <string name="eighties">Cosas Ochenterasa</string>
 
+    <string name="list">Lista de contactos que no le vamos a vender a nadie</string>
+    <string name="listbtn">Listar contactos</string>
 
-    Informacion
+    <string name="save">Guardar</string>
+    <string name="load">Cargar</string>
+
+
 </resources>

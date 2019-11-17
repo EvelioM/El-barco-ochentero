@@ -41,4 +41,10 @@ Access and participation in all sessions, parties, activities and private concer
     <string name="game">Eighties Game</string>
     <string name="photo">Eighties Picture</string>
     <string name="eighties">Eighties stuff</string>
+
+    <string name="list">"List of contacts that we're totally not selling to anybody"</string>
+    <string name="listbtn">List contacts</string>
+
+    <string name="save">Save</string>
+    <string name="load">Load</string>
 </resources>

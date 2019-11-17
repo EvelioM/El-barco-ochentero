@@ -85,7 +85,7 @@ public class MainLogged extends AppCompatActivity implements NavigationView.OnNa
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FirstFragment(onTouch)).commit();
             navigationView.setCheckedItem(R.id.nav_message);
         }
-
+        contextOfApplication = getApplicationContext();
     }
 
     @Override
@@ -98,7 +98,7 @@ public class MainLogged extends AppCompatActivity implements NavigationView.OnNa
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new SecondFragment(onTouch)).commit();
                 break;
             case R.id.nav_profile:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ThirdFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ThirdFragment(this)).commit();
                 break;
             case R.id.nav_settings:
                 Intent intencionxml = new Intent(MainLogged.this, SettingsContainer.class);
@@ -160,6 +160,12 @@ public class MainLogged extends AppCompatActivity implements NavigationView.OnNa
                 }
             }
         }
+    }
+
+    public static Context contextOfApplication;
+    public static Context getContextOfApplication()
+    {
+        return contextOfApplication;
     }
 
 }
